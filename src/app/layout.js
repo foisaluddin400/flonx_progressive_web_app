@@ -3,7 +3,6 @@ import "./globals.css";
 import ClientLayout from "./layout/ClientLayout";
 import ReduxProvider from "@/provider/ReduxProvider";
 
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -20,24 +19,16 @@ export const metadata = {
   description: "E-commerce",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="product">
       <body
         className={`${geistSans.variable} bg-white ${geistMono.variable} antialiased`}
       >
-
-
-
-        
-         <ReduxProvider>
-       
-            <div className="">
-          
-              <ClientLayout>{children}</ClientLayout>
-            </div>
-     
+        <ReduxProvider>
+          <div className="">
+            <ClientLayout>{children}</ClientLayout>
+          </div>
         </ReduxProvider>
       </body>
     </html>
