@@ -6,16 +6,17 @@ import JuicImage from "../../../public/img/juic.png";
 import { ArrowLeft } from "lucide-react";
 import LeftArray from "@/components/icon/LeftArray";
 import Plus from "@/components/icon/Plus";
+import { useRouter } from "next/navigation";
 
 const ItemDetails = () => {
   const [qty, setQty] = useState(4);
-
+  const router = useRouter();
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0D021A] to-[#1A0830] text-white relative overflow-hidden">
+    <div className="">
 
       {/* Top Header */}
       <div className="flex items-center justify-center relative pt-6 pb-4">
-        <button className="absolute left-4 w-10 h-10 rounded-full border border-purple-400/30 flex items-center justify-center bg-white/5 backdrop-blur-md">
+        <button   onClick={() => router.back()} className="absolute left-4 w-10 h-10 rounded-full border border-purple-400/30 flex items-center justify-center bg-white/5 backdrop-blur-md">
           <LeftArray size={18} />
         </button>
         <h1 className="text-lg font-semibold tracking-wide">

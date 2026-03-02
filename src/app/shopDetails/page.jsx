@@ -1,14 +1,17 @@
+'use client'
 import React from "react";
 import Image1 from "../../../public/img/shopImage.png";
 import LeftArray from "@/components/icon/LeftArray";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const page = () => {
+    const router = useRouter();
   return (
     <div className="px-4 pt-6 pb-11">
       <div className="flex justify-between">
-        <div className=" bg-[#1A0E2E] rounded-full w-[40px] h-[40px] flex justify-center items-center shadow-lg border border-[#2A2448]">
+        <button   onClick={() => router.back()} className=" bg-[#1A0E2E] rounded-full w-[40px] h-[40px] flex justify-center items-center shadow-lg border border-[#2A2448]">
           <LeftArray></LeftArray>
-        </div>
+        </button>
         <h1 className="text-2xl">Shop Details</h1>
         <div></div>
       </div>

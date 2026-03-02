@@ -1,5 +1,6 @@
 import Image from "next/image";
 import logo from "../../../public/img/logo.png";
+import Link from "next/link";
 
 export const Navbar = () => {
   return (
@@ -16,12 +17,13 @@ export const Navbar = () => {
         />
 
         {/* Right - Join Button */}
+        <Link href={'/joinNow'}>
         <button className="px-6 py-2 rounded-full text-white font-semibold
           bg-gradient-to-tr from-[#822CE7] to-[#BB82FF]
           hover:scale-105 active:scale-95
           transition-all duration-300 shadow-md hover:shadow-lg">
           Join Now
-        </button>
+        </button></Link>
 
       </div>
     </nav>
