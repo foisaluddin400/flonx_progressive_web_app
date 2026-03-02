@@ -1,7 +1,7 @@
-"use client";
+
 
 import LeftArray from "@/components/icon/LeftArray";
-import { useRouter } from "next/navigation";
+
 import React from "react";
 import logo from "../../../public/img/logo.png";
 import Image from "next/image";
@@ -9,22 +9,19 @@ import Glass from "@/components/icon/Glass";
 import Mark from "@/components/icon/Mark";
 import HomeIco from "@/components/icon/HomeIco";
 import HowWork from "./HowWork";
+import Navigate from "@/components/shared/Navigate";
 const JoinNow = () => {
-  const router = useRouter();
+
 
   return (
     <div className="">
       {/* Header */}
       <div className="px-3">
-        <div className="flex items-center justify-center relative pt-6">
-          <button
-            onClick={() => router.back()}
-            className="absolute left-0 bg-[#1A0E2E] rounded-full w-[40px] h-[40px] flex justify-center items-center shadow-lg border border-[#2A2448]"
-          >
-            <LeftArray />
-          </button>
+        <div className="flex items-center justify-between relative pt-6">
+        <Navigate></Navigate>
 
           <h1 className="text-lg font-semibold">Join Now</h1>
+          <div></div>
         </div>
 
         {/* Logo Section */}

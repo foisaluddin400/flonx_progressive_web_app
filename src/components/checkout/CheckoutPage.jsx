@@ -1,7 +1,7 @@
-"use client";
 
+'use client'
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import Image from "next/image";
 import { ArrowLeft } from "lucide-react";
 
@@ -9,9 +9,10 @@ import Mojito from "../../../public/img/mojito.png";
 import OldFashioned from "../../../public/img/oldFashioned.png";
 import LeftArray from "../icon/LeftArray";
 import DeleteIco from "../icon/DeleteIco";
+import Navigate from "../shared/Navigate";
 
 export default function CheckoutPage() {
-  const router = useRouter();
+
   const [showModal, setShowModal] = useState(false);
 
   const [cart, setCart] = useState([
@@ -62,14 +63,10 @@ export default function CheckoutPage() {
     <div className="min-h-screen bg-gradient-to-b from-[#0D021A] to-[#1A0830] text-white pb-32 relative">
 
       {/* Header */}
-      <div className="flex items-center justify-center relative pt-6 pb-6">
-        <button
-          onClick={() => router.back()}
-          className="absolute left-4 w-10 h-10 rounded-full border border-purple-400/30 flex items-center justify-center bg-white/5 backdrop-blur-md"
-        >
-          <LeftArray></LeftArray>
-        </button>
+      <div className="flex items-center justify-between relative pt-6 pb-6">
+        <Navigate></Navigate>
         <h1 className="text-lg font-semibold">Checkout</h1>
+        <div></div>
       </div>
 
       {/* Cart Items */}

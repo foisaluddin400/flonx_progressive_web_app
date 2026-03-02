@@ -5,7 +5,7 @@ import Link from "next/link";
 export const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#822CE71A] backdrop-blur-md shadow-sm">
-      <div className="flex items-center justify-between px-6 md:px-12 py-4">
+      <div className="flex items-center justify-between px-3 md:px-12 py-4">
 
         {/* Left - Logo */}
         <Image 
