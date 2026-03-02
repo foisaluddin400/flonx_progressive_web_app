@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "JusBuy Website",
+  title: "Flonx App",
   description: "E-commerce",
 };
 
