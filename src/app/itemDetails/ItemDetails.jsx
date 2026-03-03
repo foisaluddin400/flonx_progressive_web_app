@@ -8,6 +8,7 @@ import LeftArray from "@/components/icon/LeftArray";
 import Plus from "@/components/icon/Plus";
 
 import Navigate from "@/components/shared/Navigate";
+import Link from "next/link";
 
 const ItemDetails = () => {
   const [qty, setQty] = useState(4);
@@ -73,11 +74,11 @@ const ItemDetails = () => {
 
         {/* Add To Cart Button */}
         <div className="mt-12">
-          <button className="w-full py-3 rounded-full
+          <Link href={'/'}><button className="w-full py-3 rounded-full
             bg-gradient-to-br from-[#BB82FF] to-[#822CE7]
             shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300">
             Add To Cart
-          </button>
+          </button></Link>
         </div>
 
       </div>

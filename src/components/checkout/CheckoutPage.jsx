@@ -1,5 +1,4 @@
-
-'use client'
+"use client";
 import { useState } from "react";
 
 import Image from "next/image";
@@ -10,9 +9,15 @@ import OldFashioned from "../../../public/img/oldFashioned.png";
 import LeftArray from "../icon/LeftArray";
 import DeleteIco from "../icon/DeleteIco";
 import Navigate from "../shared/Navigate";
+import GoogleIco from "../icon/GoogleIco";
+import AppleIco from "../icon/AppleIco";
+import CardIco from "../icon/CardIco";
+import RightMarkIco from "../icon/RightMarkIco";
+import RIghtArray from "../icon/RIghtArray";
+import Link from "next/link";
 
 export default function CheckoutPage() {
-
+  const [showSuccess, setShowSuccess] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const [cart, setCart] = useState([
@@ -39,29 +44,23 @@ export default function CheckoutPage() {
   const increase = (id) => {
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, qty: item.qty + 1 } : item
-      )
+        item.id === id ? { ...item, qty: item.qty + 1 } : item,
+      ),
     );
   };
 
   const decrease = (id) => {
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      )
+        item.id === id && item.qty > 1 ? { ...item, qty: item.qty - 1 } : item,
+      ),
     );
   };
 
-  const total = cart.reduce(
-    (acc, item) => acc + item.price * item.qty,
-    0
-  );
+  const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0D021A] to-[#1A0830] text-white pb-32 relative">
-
+    <div className="px-4   ">
       {/* Header */}
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate></Navigate>
@@ -70,7 +69,7 @@ export default function CheckoutPage() {
       </div>
 
       {/* Cart Items */}
-      <div className="px-4 space-y-5">
+      <div className=" space-y-5">
         {cart.map((item) => (
           <div
             key={item.id}
@@ -92,7 +91,9 @@ export default function CheckoutPage() {
                 </div>
               </div>
 
-              <button className="w-[40px] h-[40px] rounded-full bg-[#471b1bc4] flex justify-center items-center"><DeleteIco></DeleteIco></button>
+              <button className="w-[40px] h-[40px] rounded-full bg-[#471b1bc4] flex justify-center items-center">
+                <DeleteIco></DeleteIco>
+              </button>
             </div>
 
             <div className="flex items-center justify-between mt-5">
@@ -104,9 +105,7 @@ export default function CheckoutPage() {
                   −
                 </button>
 
-                <span className="text-lg font-semibold">
-                  {item.qty}
-                </span>
+                <span className="text-lg font-semibold">{item.qty}</span>
 
                 <button
                   onClick={() => increase(item.id)}
@@ -143,7 +142,9 @@ export default function CheckoutPage() {
         >
           Checkout
         </button>
-        <p className="text-center pt-3">Powered by Stripe • No signup required</p>
+        <p className="text-center pt-3">
+          Powered by Stripe • No signup required
+        </p>
       </div>
 
       {/* Slide Up Modal */}
@@ -155,7 +156,7 @@ export default function CheckoutPage() {
       />
 
       <div
-        className={`fixed bottom-0 left-0 w-full bg-white  p-6 transition-transform duration-500 ${
+        className={`fixed bottom-0 left-0 w-full bg-white  p-3 transition-transform duration-500 ${
           showModal ? "translate-y-0" : "translate-y-full"
         }`}
       >
@@ -167,19 +168,67 @@ export default function CheckoutPage() {
         </button>
 
         <div className="space-y-4">
-          <button className="w-full bg-black text-white py-3 rounded-lg">
-            G Pay
-          </button>
-          <button className="w-full bg-black text-white py-3 rounded-lg">
-            Apple Pay
-          </button>
-          <div className="border p-3 rounded-lg text-gray-600">
-            Card
+          <div className="w-full flex justify-center items-center gap-2 bg-black text-white py-2 rounded-lg">
+            <GoogleIco></GoogleIco> Pay
           </div>
-          <button className="w-full bg-blue-600 text-white py-3 rounded-lg">
+          <div className="w-full flex justify-center items-center gap-2 bg-black text-white py-2 rounded-lg">
+            <AppleIco></AppleIco> Pay
+          </div>
+          <div className="border flex items-center gap-2 p-3 rounded-lg text-gray-600">
+            <CardIco></CardIco> Card
+          </div>
+          <button
+            onClick={() => {
+              setShowModal(false);
+              setShowSuccess(true);
+            }}
+            className="w-full bg-blue-600 text-white py-3 rounded-lg"
+          >
             Pay ${total.toFixed(2)}
           </button>
         </div>
+      </div>
+      {/* Success Overlay */}
+      <div
+        className={`fixed inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${
+          showSuccess ? "opacity-100 visible" : "opacity-0 invisible"
+        }`}
+        onClick={() => setShowSuccess(false)}
+      />
+
+      {/* Success Slide Up Modal */}
+      <div
+        className={`fixed bottom-0 left-0 w-full bg-white p-3  transition-transform duration-500 ${
+          showSuccess ? "translate-y-0" : "translate-y-full"
+        }`}
+      >
+           <button
+            onClick={() => setShowSuccess(false)}
+            className="text-gray-500 text-xl"
+          >
+            ✕
+          </button>
+        <div className="items-center mb-6">
+        <div className="flex justify-center">
+            <h2 className="text-2xl flex gap-1 items-center font-bold text-gray-800">
+            <RIghtArray></RIghtArray> link
+          </h2>
+        </div>
+       
+        </div>
+
+        <div className="text-center py-6">
+          <div className="flex justify-center"><RightMarkIco></RightMarkIco></div>
+          <h3 className="text-3xl mt-3 font-bold text-gray-800">Success</h3>
+          <p className="text-gray-600 mt-2">Your payment is successfully completed</p>
+        </div>
+
+        <Link href={'/myOrder'}><button
+          onClick={() => setShowSuccess(false)}
+          className="w-full bg-[#00D66F] text-black py-3 rounded-lg font-semibold"
+        >
+         See my orders 
+        </button></Link>
       </div>
     </div>
   );
