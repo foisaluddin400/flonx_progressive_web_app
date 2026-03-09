@@ -130,7 +130,7 @@ export default function CheckoutPage() {
       </div>
 
       {/* Bottom Fixed Bar */}
-      <div className="fixed bottom-0 left-0 w-full bg-[#822CE7] p-6 rounded-t-3xl shadow-xl">
+      <div className="fixed bottom-0 left-0 w-full bg-[#822CE7] p-6  shadow-xl">
         <div className="flex justify-between text-[16px]  mb-4">
           <span>Total</span>
           <span className="font-bold italic text-lg text-[#1D1733]">${total}</span>
