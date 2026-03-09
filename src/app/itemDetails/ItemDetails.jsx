@@ -40,7 +40,7 @@ const ItemDetails = () => {
       </div>
 
       {/* Bottom Curved Section */}
-      <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-br from-[#2A124B] to-[#140625] rounded-t-[60px] px-6 pt-28">
+      <div className="absolute bottom-0 left-0 w-full h-[70%] bg-gradient-to-br from-[#2A124B] to-[#140625] rounded-t-[60px] px-6 pt-36">
 
         {/* Item Info */}
         <div className="text-center">
