@@ -16,6 +16,11 @@ module.exports = {
         neutral: "#3d4451",
         "base-100": "#ffffff",
       },
+       fontFamily: {
+        clash: ["var(--clash-display)"],
+        style: ["var(--style-display)"],
+        
+      },
     },
   },
   plugins: [],

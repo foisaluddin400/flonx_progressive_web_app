@@ -9,6 +9,7 @@ import Plus from "@/components/icon/Plus";
 
 import Navigate from "@/components/shared/Navigate";
 import Link from "next/link";
+import ItemIco from "@/components/icon/ItemIco";
 
 const ItemDetails = () => {
   const [qty, setQty] = useState(4);
@@ -19,7 +20,7 @@ const ItemDetails = () => {
       {/* Top Header */}
       <div className="flex items-center justify-between relative pt-6 pb-4">
      <Navigate></Navigate>
-        <h1 className="text-lg font-semibold tracking-wide">
+        <h1 className="text-[16px] italic">
           Item Details
         </h1>
         <div></div>
@@ -43,8 +44,8 @@ const ItemDetails = () => {
 
         {/* Item Info */}
         <div className="text-center">
-          <h2 className="text-2xl font-semibold">Mojito</h2>
-          <p className="text-gray-400 mt-2">
+          <h2 className="text-[20px] font-semibold">Mojito</h2>
+          <p className="text-gray-400 text-[14px] italic mt-2">
             Rum, mint, lime, soda
           </p>
 
@@ -74,11 +75,13 @@ const ItemDetails = () => {
 
         {/* Add To Cart Button */}
         <div className="mt-12">
-          <Link href={'/'}><button className="w-full py-3 rounded-full
+          <Link href={'/'}><div className="w-full flex justify-center items-center gap-4 cursor-pointer py-3 rounded-full
             bg-gradient-to-br from-[#BB82FF] to-[#822CE7]
             shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300">
-            Add To Cart
-          </button></Link>
+             
+              <ItemIco></ItemIco>
+           Add To Cart
+          </div></Link>
         </div>
 
       </div>

@@ -64,7 +64,7 @@ export default function CheckoutPage() {
       {/* Header */}
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate></Navigate>
-        <h1 className="text-lg font-semibold">Checkout</h1>
+        <h1 className=" text-[16px] italic font-semibold">Checkout</h1>
         <div></div>
       </div>
 
@@ -85,9 +85,9 @@ export default function CheckoutPage() {
                   className="rounded-xl bg-[#FEE2E2]"
                 />
                 <div>
-                  <h3 className="font-semibold">{item.name}</h3>
-                  <p className="text-sm text-[#C9C6D6]">{item.desc}</p>
-                  <p className="mt-1 font-bold">${item.price}</p>
+                  <h3 className="text-[16px]">{item.name}</h3>
+                  <p className="text-[13px] text-[#C9C6D6]">{item.desc}</p>
+                  <p className="mt-1 font-bold text-[15px] italic">${item.price}</p>
                 </div>
               </div>
 
@@ -131,9 +131,9 @@ export default function CheckoutPage() {
 
       {/* Bottom Fixed Bar */}
       <div className="fixed bottom-0 left-0 w-full bg-[#822CE7] p-6 rounded-t-3xl shadow-xl">
-        <div className="flex justify-between text-white mb-4">
+        <div className="flex justify-between text-[16px]  mb-4">
           <span>Total</span>
-          <span className="font-bold text-lg">${total}</span>
+          <span className="font-bold italic text-lg text-[#1D1733]">${total}</span>
         </div>
 
         <button
@@ -142,7 +142,7 @@ export default function CheckoutPage() {
         >
           Checkout
         </button>
-        <p className="text-center pt-3">
+        <p className="text-center text-[10px] pt-3">
           Powered by Stripe • No signup required
         </p>
       </div>
@@ -219,8 +219,8 @@ export default function CheckoutPage() {
 
         <div className="text-center py-6">
           <div className="flex justify-center"><RightMarkIco></RightMarkIco></div>
-          <h3 className="text-3xl mt-3 font-bold text-gray-800">Success</h3>
-          <p className="text-gray-600 mt-2">Your payment is successfully completed</p>
+          <h3 className="text-[24px] mt-3 font-bold text-gray-800">Success</h3>
+          <p className="text-gray-600 mt-2">successfully completed</p>
         </div>
 
         <Link href={'/myOrder'}><button

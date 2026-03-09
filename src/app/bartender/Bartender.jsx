@@ -74,18 +74,20 @@ const Bartender = () => {
               setShowCustom(true);
               setSelected(null);
             }}
-            className="flex-1 py-4 rounded-full
+            className=" py-4 rounded-full w-full 
             bg-gradient-to-br from-[#BB82FF] to-[#822CE7]
             shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300"
           >
             Custom
           </button>
 
-          <Link href={'/'}><button className="flex-1 py-4 rounded-full
+         
+            <Link className="w-full" href={'/'}><button className=" w-full py-4 rounded-full
             bg-gradient-to-br from-[#BB82FF] to-[#822CE7]
             shadow-lg hover:scale-[1.02] active:scale-95 transition-all duration-300">
             Continue
           </button></Link>
+          
         </div>
 
         <Link href={'/completeOrder'}><button className="w-full mt-6 py-4 rounded-full bg-[#E5E5E5] text-black">

@@ -10,6 +10,7 @@ import Arrow from "../icon/Arrow";
 import Link from "next/link";
 import CheckoutIco from "../icon/CheckoutIco";
 import ItemIco from "../icon/ItemIco";
+import LocationIco from "../icon/LocationIco";
 
 const categories = ["Cocktails", "Wine", "Beer", "Spin"];
 
@@ -87,13 +88,13 @@ export default function HomePage() {
                 alt="Logo"
               />
               <div className="space-y-2">
-                <h2 className="text-lg text-white font-semibold">
+                <h2 className="text-[17px]  text-white font-semibold">
                   Copper Alley Bar
                 </h2>
-                <span className="text-[#22C55E] bg-[#22C55E33] p-1 rounded-full px-3 text-sm">
+                <span className="text-[#22C55E] bg-[#22C55E33] py-[4px] px-[12px] rounded-full text-sm">
                   • Open
                 </span>
-                <p className="text-gray-400 text-sm">Austin, Texas, USA</p>
+                <p className="text-gray-400 text-[12px] flex gap-1 items-center"><LocationIco></LocationIco> Austin, Texas, USA</p>
               </div>
             </div>
             <Arrow />
@@ -107,7 +108,7 @@ export default function HomePage() {
           <button
             key={cat}
             onClick={() => setActive(cat)}
-            className={`px-5 py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
+            className={`px-5 text-[16px] py-2 rounded-full whitespace-nowrap transition-all duration-300 ${
               active === cat
                 ? "bg-gradient-to-tr from-[#822CE7] to-[#BB82FF] text-white shadow-md"
                 : "bg-[#1E1233] text-gray-300"
@@ -130,9 +131,9 @@ export default function HomePage() {
                 <Image src={item.img} alt={item.name} width={60} height={60} />
               </div>
               <div>
-                <h3 className="font-semibold">{item.name}</h3>
-                <p className="text-[#C9C6D6] text-sm">{item.desc}</p>
-                <p className="mt-1 font-bold">${item.price}</p>
+                <h3 className="text-[16px]">{item.name}</h3>
+                <p className="text-[#C9C6D6] text-[13px]">{item.desc}</p>
+                <p className="mt-1 font-bold text-[15px] italic">${item.price}</p>
               </div>
             </div>
 
@@ -160,10 +161,10 @@ export default function HomePage() {
               <ItemIco></ItemIco>
             </div>
             <div>
-              <p className="text-sm text-white/80">
+              <p className="text-[16px] font-bold text-white">
               {cartItems.length} Items
             </p>
-            <p className="text-xl font-bold text-white">
+            <p className="text-[16px] font-bold text-[#1D1733]">
               ${total}
             </p>
             </div>

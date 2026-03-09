@@ -20,7 +20,7 @@ const MyOrder = () => {
     <div className="px-3">
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate />
-        <h1 className="text-2xl">My Order</h1>
+        <h1 className="text-[16px] italic">My Order</h1>
         <div></div>
       </div>
 

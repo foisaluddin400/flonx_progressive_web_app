@@ -8,15 +8,15 @@ const page = () => {
     <div className="px-3">
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate />
-        <h1 className="text-2xl">My Order</h1>
+        <h1 className="text-[16px] italic">My Order</h1>
         <div></div>
       </div>
       <div className="text-center">
     <div className="flex justify-center py-3">
             <CompleteOrderIco></CompleteOrderIco>
     </div>
-        <h1>Order Completed</h1>
-        <p>Thank you for your order! Enjoy your drinks.</p>
+        <h1 className="text-[24px]">Order Completed</h1>
+        <p className="text-[13px]">Thank you for your order! Enjoy your drinks.</p>
       </div>
      <Link href={'/bartender'}> <button
         className="w-full py-3 mt-5 rounded-full

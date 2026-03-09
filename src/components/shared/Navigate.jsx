@@ -9,7 +9,7 @@ const Navigate = () => {
 
         <button
           onClick={() => router.back()}
-          className=" w-10 h-10 rounded-full border border-purple-400/30 flex items-center justify-center bg-white/5 backdrop-blur-md"
+          className=" w-10 h-10  rounded-full border border-purple-400/30 flex items-center justify-center bg-white/5 backdrop-blur-md"
         >
           <LeftArray></LeftArray>
         </button>

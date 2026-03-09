@@ -3,6 +3,22 @@ import "./globals.css";
 import ClientLayout from "./layout/ClientLayout";
 import ReduxProvider from "@/provider/ReduxProvider";
 
+
+const style = localFont({
+  src: "../font/Nunito-VariableFont_wght.ttf",
+  variable: "--style-display",
+});
+
+
+
+
+
+
+
+
+
+
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -23,10 +39,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="product">
       <body
-        className={`${geistSans.variable} bg-white ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} bg-white ${geistMono.variable} ${style.variable} antialiased`}
       >
         <ReduxProvider>
-          <div className="">
+          <div className="font-style">
             <ClientLayout>{children}</ClientLayout>
           </div>
         </ReduxProvider>
