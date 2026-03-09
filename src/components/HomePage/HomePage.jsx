@@ -155,7 +155,7 @@ export default function HomePage() {
 
       {/* Fixed Bottom Checkout Bar */}
       {cartItems.length > 0 && (
-        <div className="fixed bottom-0 left-0 w-full bg-[#822CE7] px-6 py-4 flex items-center justify-between rounded-t-3xl shadow-2xl">
+        <div className="fixed bottom-0 left-0 w-full bg-[#822CE7] px-6 py-4 flex items-center justify-between shadow-2xl">
           <div className="flex items-center gap-3">
             <div className="border border-white w-[45px] h-[45px] flex justify-center items-center rounded-lg">
               <ItemIco></ItemIco>
