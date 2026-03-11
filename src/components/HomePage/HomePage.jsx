@@ -132,7 +132,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="text-[16px]">{item.name}</h3>
-                <p className="text-[#C9C6D6] text-[13px]">{item.desc}</p>
+                <p className="text-[#C9C6D6] text-[13px] italic">{item.desc}</p>
                 <p className="mt-1 font-bold text-[15px] italic">${item.price}</p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function HomePage() {
             </div>
           </div>
 
-         <Link href={'/checkout'}> <button className="bg-white text-[#822CE7] px-6 py-2 rounded-full font-semibold">
+         <Link href={'/checkout'}> <button className="bg-white text-black px-6 py-2 rounded-full font-semibold">
             Checkout
           </button></Link>
         </div>

@@ -28,7 +28,7 @@ const ItemDetails = () => {
 
       {/* Image Card */}
       <div className="flex justify-center mt-8 relative z-10">
-        <div className="w-[260px] h-[260px] rounded-3xl border border-purple-400/20 bg-white/5 backdrop-blur-md flex items-center justify-center">
+        <div className="w-[260px] h-[260px] rounded-3xl border border-purple-400/20  flex items-center justify-center">
           <Image
             src={JuicImage}
             alt="Mojito"

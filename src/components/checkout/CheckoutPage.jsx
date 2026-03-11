@@ -64,7 +64,7 @@ export default function CheckoutPage() {
       {/* Header */}
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate></Navigate>
-        <h1 className=" text-[16px] italic font-semibold">Checkout</h1>
+        <h1 className=" text-[16px] italic">Checkout</h1>
         <div></div>
       </div>
 
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
             key={item.id}
             className="bg-[#1A0E2E] p-4 rounded-2xl border border-[#2A2448]"
           >
-            <div className="flex justify-between">
+            <div className="flex border-b border-[#2A2448] pb-5 justify-between">
               <div className="flex gap-4">
                 <Image
                   src={item.img}
@@ -86,7 +86,7 @@ export default function CheckoutPage() {
                 />
                 <div>
                   <h3 className="text-[16px]">{item.name}</h3>
-                  <p className="text-[13px] text-[#C9C6D6]">{item.desc}</p>
+                  <p className="text-[13px] text-[#C9C6D6] italic">{item.desc}</p>
                   <p className="mt-1 font-bold text-[15px] italic">${item.price}</p>
                 </div>
               </div>
@@ -96,7 +96,7 @@ export default function CheckoutPage() {
               </button>
             </div>
 
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center justify-between mt-3">
               <div className="flex items-center gap-6">
                 <button
                   onClick={() => decrease(item.id)}

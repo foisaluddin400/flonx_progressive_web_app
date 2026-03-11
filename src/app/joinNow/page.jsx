@@ -20,7 +20,7 @@ const JoinNow = () => {
         <div className="flex items-center justify-between relative pt-6">
         <Navigate></Navigate>
 
-          <h1 className="text-lg font-semibold">Join Now</h1>
+          <h1 className="text-[16px] italic">Join Now</h1>
           <div></div>
         </div>
 
@@ -105,7 +105,8 @@ const JoinNow = () => {
           </ul>
 
           <button className="mt-8 w-full py-3 rounded-full bg-gradient-to-r from-[#822CE7] to-[#BB82FF] font-semibold shadow-lg hover:scale-[1.02] active:scale-95 transition">
-            Join as Bar Owner
+        Join as a venue
+
           </button>
         </div>
       </div>

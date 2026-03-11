@@ -11,7 +11,7 @@ const page = () => {
     <div className="px-4 pt-6 pb-11">
       <div className="flex justify-between">
         <Navigate></Navigate>
-        <h1 className="text-2xl">Shop Details</h1>
+        <h1 className="text-[16px] italic">Shop Details</h1>
         <div></div>
       </div>
 

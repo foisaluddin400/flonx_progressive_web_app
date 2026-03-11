@@ -33,20 +33,22 @@ const Bartender = () => {
       {/* Amount Buttons */}
       <div className="space-y-4">
         {amounts.map((amt) => (
-          <button
-            key={amt}
-            onClick={() => {
-              setSelected(amt);
-              setShowCustom(false);
-            }}
-            className={`w-full py-4 rounded-full border transition-all duration-300 ${
-              selected === amt
-                ? "bg-gradient-to-r from-purple-600 to-indigo-500 border-transparent"
-                : "border-[#5B2C91] bg-[#1A0830]"
-            }`}
-          >
-            ${amt}
-          </button>
+         <button
+  key={amt}
+  onClick={() => {
+    setSelected(amt);
+    setShowCustom(false);
+  }}
+  className={`w-full py-4 rounded-full border transition-all duration-300 ${
+    selected === amt
+      ? "bg-gradient-to-r from-purple-600 to-indigo-500 border-transparent"
+      : "border-[#2A2448] bg-[#1A0830]"
+  }`}
+>
+  <span className="bg-gradient-to-r from-[#BB82FF] to-[#822CE7] bg-clip-text text-transparent font-semibold">
+    ${amt}
+  </span>
+</button>
         ))}
       </div>
 
@@ -61,7 +63,7 @@ const Bartender = () => {
             value={customAmount}
             onChange={(e) => setCustomAmount(e.target.value)}
             placeholder="Enter Your Amount"
-            className="w-full mt-2 px-4 py-4 rounded-full bg-[#1A0830] border border-[#5B2C91] outline-none"
+            className="w-full mt-2 px-4 py-4 rounded-full bg-[#1A0830] border border-[#2A2448] outline-none"
           />
         </div>
       )}
@@ -90,7 +92,7 @@ const Bartender = () => {
           
         </div>
 
-        <Link href={'/completeOrder'}><button className="w-full mt-6 py-4 rounded-full bg-[#E5E5E5] text-black">
+        <Link href={'/completeOrder'}><button className="w-full mt-6 py-4 rounded-full bg-[#E5E5E5] text-[#BB82FF]">
           Skip & Continue Ordering
         </button></Link>
       </div>
