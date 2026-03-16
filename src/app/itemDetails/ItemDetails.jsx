@@ -18,7 +18,7 @@ const ItemDetails = () => {
     <div className="">
 
       {/* Top Header */}
-      <div className="flex items-center justify-between relative pt-6 pb-4">
+      <div className="flex items-center justify-between relative pt-6 pb-4 px-3">
      <Navigate></Navigate>
         <h1 className="text-[16px] italic">
           Item Details

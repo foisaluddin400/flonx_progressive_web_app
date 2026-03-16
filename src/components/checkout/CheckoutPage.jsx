@@ -60,7 +60,7 @@ export default function CheckoutPage() {
   const total = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
 
   return (
-    <div className="px-4   ">
+    <div className="px-3   ">
       {/* Header */}
       <div className="flex items-center justify-between relative pt-6 pb-6">
         <Navigate></Navigate>

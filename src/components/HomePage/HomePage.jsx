@@ -75,7 +75,7 @@ export default function HomePage() {
   }, [cartItems]);
 
   return (
-    <div className="pt-16 px-4 pb-40">
+    <div className="pt-16 px-3 pb-40">
 
       {/* Top Card */}
       <div className="mt-6 bg-[#1A0E2E] rounded-2xl p-4 shadow-lg border border-[#2A2448]">
