@@ -13,16 +13,32 @@ const ReadyForPickup = () => {
     if (!dragging) return;
 
     const rect = sliderRef.current.getBoundingClientRect();
-    let newX = clientX - rect.left - 30;
+    let newX = clientX - rect.left - 28;
+
+    const max = rect.width - 56;
 
     if (newX < 0) newX = 0;
-    if (newX > rect.width - 60) newX = rect.width - 60;
+    if (newX > max) newX = max;
 
     setPosition(newX);
+  };
 
-   
-    if (newX >= rect.width - 65) {
-      router.push("/completeOrder");
+  const handleEnd = () => {
+    setDragging(false);
+
+    const rect = sliderRef.current.getBoundingClientRect();
+    const max = rect.width - 56;
+
+    // 👉 90%+ = complete
+    if (position >= max * 0.9) {
+      setPosition(max);
+
+      setTimeout(() => {
+        router.push("/completeOrder");
+      }, 200);
+    } else {
+      // 👉 otherwise smooth reset
+      setPosition(0);
     }
   };
 
@@ -44,9 +60,8 @@ const ReadyForPickup = () => {
         </p>
       </div>
 
-      {/* Bottom Section */}
+      {/* Bottom */}
       <div>
-        {/* Slider */}
         <div
           ref={sliderRef}
           className="relative bg-[#D9D9D9] h-14 rounded-full flex items-center px-2 overflow-hidden"
@@ -57,18 +72,19 @@ const ReadyForPickup = () => {
 
           <div
             onMouseDown={() => setDragging(true)}
-            onMouseUp={() => setDragging(false)}
-            onMouseLeave={() => setDragging(false)}
+            onMouseUp={handleEnd}
+            onMouseLeave={handleEnd}
             onMouseMove={(e) => handleMove(e.clientX)}
             onTouchStart={() => setDragging(true)}
-            onTouchEnd={() => setDragging(false)}
-            onTouchMove={(e) =>
-              handleMove(e.touches[0].clientX)
-            }
-            style={{ left: position }}
-            className="absolute w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold cursor-pointer transition-all duration-200"
+            onTouchEnd={handleEnd}
+            onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+            style={{
+              left: position,
+              transition: dragging ? "none" : "all 0.3s ease",
+            }}
+            className="absolute w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold cursor-pointer"
           >
-            Slide
+            →
           </div>
         </div>
 
