@@ -84,7 +84,7 @@ const ReadyForPickup = () => {
             }}
             className="absolute w-14 h-14 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold cursor-pointer"
           >
-            →
+            Slide
           </div>
         </div>
 

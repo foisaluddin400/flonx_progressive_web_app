@@ -11,7 +11,7 @@ import { Navbar } from "@/components/shared/Navbar";
 
 const Page = () => {
   const [activeTab, setActiveTab] = useState("queued");
-  const [position, setPosition] = useState(0);
+ const [position, setPosition] = useState(0);
   const [dragging, setDragging] = useState(false);
   const sliderRef = useRef(null);
 
@@ -19,13 +19,35 @@ const Page = () => {
     if (!dragging) return;
 
     const rect = sliderRef.current.getBoundingClientRect();
-    let newX = clientX - rect.left - 30;
+    let newX = clientX - rect.left - 28;
+
+    const max = rect.width - 56;
 
     if (newX < 0) newX = 0;
-    if (newX > rect.width - 60) newX = rect.width - 60;
+    if (newX > max) newX = max;
 
     setPosition(newX);
   };
+
+  const handleEnd = () => {
+    setDragging(false);
+
+    const rect = sliderRef.current.getBoundingClientRect();
+    const max = rect.width - 56;
+
+    // 👉 90%+ = complete
+    if (position >= max * 0.9) {
+      setPosition(max);
+
+      setTimeout(() => {
+        router.push("/completeOrder");
+      }, 200);
+    } else {
+      // 👉 otherwise smooth reset
+      setPosition(0);
+    }
+  };
+
 
   return (
     <div className="px-3">
@@ -391,13 +413,16 @@ const Page = () => {
 
                 <div
                   onMouseDown={() => setDragging(true)}
-                  onMouseUp={() => setDragging(false)}
-                  onMouseLeave={() => setDragging(false)}
-                  onMouseMove={(e) => handleMove(e.clientX)}
-                  onTouchStart={() => setDragging(true)}
-                  onTouchEnd={() => setDragging(false)}
-                  onTouchMove={(e) => handleMove(e.touches[0].clientX)}
-                  style={{ left: position }}
+            onMouseUp={handleEnd}
+            onMouseLeave={handleEnd}
+            onMouseMove={(e) => handleMove(e.clientX)}
+            onTouchStart={() => setDragging(true)}
+            onTouchEnd={handleEnd}
+            onTouchMove={(e) => handleMove(e.touches[0].clientX)}
+            style={{
+              left: position,
+              transition: dragging ? "none" : "all 0.3s ease",
+            }}
                   className="absolute w-14 h-11 bg-gradient-to-r from-purple-600 to-indigo-500 rounded-full flex items-center justify-center text-white font-semibold cursor-pointer transition-all duration-200"
                 >
                   Slide
