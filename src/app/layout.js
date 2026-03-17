@@ -9,16 +9,6 @@ const style = localFont({
   variable: "--style-display",
 });
 
-
-
-
-
-
-
-
-
-
-
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -42,7 +32,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} bg-white ${geistMono.variable} ${style.variable} antialiased`}
       >
         <ReduxProvider>
-          <div className="font-style">
+          <div className="font-style bg-[#0F0B1A]">
             <ClientLayout>{children}</ClientLayout>
           </div>
         </ReduxProvider>
